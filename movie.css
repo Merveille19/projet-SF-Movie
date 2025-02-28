@@ -1,0 +1,51 @@
+body{
+    display: flex;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.searchbar{
+
+    padding: 6px;
+    border: 1x solid #ccc;
+    border-radius: 5%;
+    font-size:  17px;
+}
+
+@media screen and (max-width: 600px){
+    h1{
+        font-size: medium;
+        text-align: center;
+        color: rgb(167, 108, 222);
+    }
+    
+}
+
+#map {
+    height: calc(100vh - 130px); 
+    width: 100%;
+    z-index: 1;
+  }
+.leaflet-popup-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+}
+  
+.leaflet-popup-content strong {
+    color: #d73a49;
+}
+  
+.leaflet-marker-icon {
+    transition: transform 0.2s;
+}
+  
+.leaflet-marker-icon:hover {
+    transform: scale(1.2);
+}
+  
+  
