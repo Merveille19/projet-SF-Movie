@@ -10,6 +10,7 @@ fetch("./data.json") // utilisation de l'API fetch our charger notre fichier
 })
 .catch((error) => console.log("shit happened ", error)) 
 
+
 var map = L.map('map').setView([37.773972, -122.431297], 13); // 13 reresente la dimension
     
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -38,15 +39,14 @@ L.marker([37.773972, -122.431297]).addTo(map)
            markers.push(marker);     
         }
         });
-        do {
-            marker.addTo(map);
-        }while(!marker)
+
     }
     
 var titrefilm = document.getElementsByClassName('searchbar')
 titrefilm.addEventListener('input', searchfilter())
 function searchfilter(titrefilm){
-     var results = movies.filter(movie => movie.title.toLowerCase().includes(titrefilm))
+    var results = movies.filter(movie => movie.title.toLowerCase().includes(titrefilm));
+     
 }
             
 
