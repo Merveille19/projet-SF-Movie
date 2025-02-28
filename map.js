@@ -1,4 +1,3 @@
-
 const markers = [] ;
 const movies = [] ;
 // Interaction avec l'API pour récupérer des données externes 
@@ -27,7 +26,7 @@ L.marker([37.773972, -122.431297]).addTo(map)
     //markers = []
 
     // recherchons les nouveaux marqueurs
-    movies.forEach(movie =>{
+        movies.forEach(movie =>{
         if (movie.lng && movie.lat){
             const longitude = parseFloat( movie.lng);
             const latitude = parseFloat(movie.lat);
@@ -38,10 +37,17 @@ L.marker([37.773972, -122.431297]).addTo(map)
             
            markers.push(marker);     
         }
-    });
+        });
+        do {
+            marker.addTo(map);
+        }while(!marker)
     }
-
-
+    
+var titrefilm = document.getElementsByClassName('searchbar')
+titrefilm.addEventListener('input', searchfilter())
+function searchfilter(titrefilm){
+     var results = movies.filter(movie => movie.title.toLowerCase().includes(titrefilm))
+}
             
 
 
