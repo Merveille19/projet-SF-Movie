@@ -11,7 +11,7 @@ fetch("./data.json") // utilisation de l'API fetch our charger notre fichier
 .catch((error) => console.log("shit happened ", error)) 
 
 
-var map = L.map('map').setView([37.773972, -122.431297], 13); // 13 reresente la dimension
+let map = L.map('map').setView([37.773972, -122.431297], 13); // 13 reresente la dimension
     
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -42,10 +42,11 @@ L.marker([37.773972, -122.431297]).addTo(map)
 
     }
     
-var titrefilm = document.getElementsByClassName('searchbar')
-titrefilm.addEventListener('input', searchfilter())
-function searchfilter(titrefilm){
-    var results = movies.filter(movie => movie.title.toLowerCase().includes(titrefilm));
+let titrefilm = document.getElementsByClassName('searchbar').addEventListener('input', searchfilter())
+
+function searchfilter(movies){
+    let searchresult =  titrefilm.value.toLowerCase(); // convertissonms le texte de entre en miniscule
+    let searchresultf = movies.filter(movie => movie.title.toLowerCase().includes(searchresult));
      
 }
             
