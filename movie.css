@@ -3,18 +3,24 @@ body{
 }
 
 .nav{
-    display: flex;
     align-items: center;
     width: 100%;
     padding: 10px 20px;
 }
 
+header{
+    background-color: rgba(142, 89, 161, 0.529);
+    padding: 20px;
+    text-align: center;
+}
+
 .searchbar{
 
-    padding: 6px;
-    border: 1x solid #ccc;
-    border-radius: 5%;
-    font-size:  17px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size:  15px;
+    width: 500px;
 }
 
 @media screen and (max-width: 600px){
@@ -27,7 +33,6 @@ body{
 }
 
 #map {
-    height: 180px; 
-    width: 300px;
-    z-index: 1;
+    height: 300px; 
+    width: 500px;
   }
