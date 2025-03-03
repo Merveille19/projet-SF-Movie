@@ -46,6 +46,7 @@ function addMarkersToMap(movies){
             const marker = L.marker([latitude, longitude])
                 .addTo(map)
                 .bindPopup(`
+                titrefilm : ${movie.title}
                 longitude : ${movie.lng}
                 latitude : ${movie.lat}`);
             
@@ -56,13 +57,15 @@ function addMarkersToMap(movies){
 }
     
     // recherche et filtrage
-let titrefilm = document.getElementsByClassName('searchbar').addEventListener('input', searchfilter())
+let titrefilm = document.getElementsByClassName('searchbar')[0]
 
 function searchfilter(movies){
     let searchresult =  titrefilm.value.toLowerCase(); // convertissonms le texte de entre en miniscule
     let searchresultf = movies.filter(movie => movie.title.toLowerCase().includes(searchresult));
-     addMarkersToMap(searchresultf)
+    addMarkersToMap(searchresultf)
 }
+
+let titrefilmtrouve = titrefilm.addEventListener('input', searchfilter(movies))
             
 
 
